@@ -1,47 +1,6 @@
-* {
-	padding: 0;
-	margin: 0;
-}
-
-body {
-	width: 600px;
-	margin: 2em auto;
-	padding: 0 2em;
-	font-size: 14px;
-	font-family: "Microsoft YaHei";
-}
-
-p {
-	line-height: 24px;
-	margin: 1em 0;
-}
-
 header {
 	padding: .5em 0;
 	border-bottom: 1px solid #cccccc;
-}
-
-nav {
-	float: left;
-	font-family: "Microsoft YaHei";
-	font-size: 1.1em;
-	text-transform: uppercase;
-	margin-left: -12em;
-	width: 9em;
-	text-align: right;
-}
-
-nav a {
-	display: block;
-	text-decoration: none;
-	padding: .7em 1em;
-	color: #000000;
-}
-
-nav a:hover {
-	background-color: #ff0000;
-	color: #f9f9f9;
-	-webkit-transition: color .2s linear;
 }
 
 article {
@@ -61,4 +20,384 @@ article a:hover {
 
 .info {
 	font-size: 14px;
+}
+
+.ycc-black, .ycc-hover-black:hover {
+  color: #fff!important;
+  background-color: #000!important;
+}
+
+.ycc-white, .ycc-hover-white:hover {
+	color: #000!important;
+	background-color: #fff!important
+}
+
+.ycc-dark-grey, .ycc-hover-dark-grey:hover {
+	color: #fff!important;
+	background-color: #616161!important
+}
+
+.ycc-light-grey, .ycc-hover-light-grey:hover {
+  color: #000!important;
+  background-color: #f1f1f1!important;
+}
+
+.ycc-light-grey-shadow, .ycc-hover-light-grey-shadow:hover {
+  color: #000!important;
+	background-color: #ccc!important;
+}
+
+.ycc-text-grey {
+  color: #757575!important;
+}
+
+.ycc-text-light-grey {
+  color: #f1f1f1!important;
+}
+
+.ycc-text-white {
+  color: #fff!important;
+}
+
+.ycc-border-grey,.ycc-hover-border-grey:hover,.ycc-border-gray,.ycc-hover-border-gray:hover {
+	border-color: #9e9e9e!important
+}
+
+.ycc-display-bottomleft {
+	position: absolute;
+	left: 0;
+	bottom: 0
+}
+
+#main {
+  margin-left: 120px;
+}
+
+#main {
+  transition: margin-left .4s;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html{
+  /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+  -ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+html, body {
+	font-size: 15px;
+  line-height: 1.5;
+  /* index */
+  height: 100%; 
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  margin: 10px 0;
+}
+
+h1 {
+	font-size: 36px
+}
+
+h2 {
+	font-size: 30px
+}
+
+h3 {
+	font-size: 24px
+}
+
+h4 {
+	font-size: 20px
+}
+
+h5 {
+	font-size: 18px
+}
+
+h6 {
+	font-size: 16px
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #eee;
+	margin: 20px 0
+}
+
+button, input, select, textarea, optgroup {
+  font: inherit;
+}
+
+.ycc-small {
+	font-size: 12px!important;
+}
+
+.ycc-medium {
+  font-size: 15px!important;
+}
+
+.ycc-large {
+  font-size: 18px!important;
+}
+
+.ycc-xlarge {
+  font-size: 24px!important;
+}
+
+.ycc-xxlarge {
+  font-size: 36px!important;
+}
+
+.ycc-jumbo {
+  font-size: 64px!important;
+}
+
+.ycc-sidebar {
+  width: 120px;
+  height: 100%;
+  background-color: #222; 
+  position: fixed!important;
+  z-index: 1;
+  overflow: auto;
+}
+
+.ycc-sidebar-block .ycc-bar-item {
+  width: 100%;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  text-decoration: none;
+  display: block;
+}
+
+.ycc-topbar {
+  width: 100%;
+  position: fixed!important;
+  z-index: 1;
+}
+
+.ycc-topbar-block {
+  display: flex;
+}
+
+.ycc-topbar-block .ycc-bar-item {
+  width: 100%;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  flex: 1;
+}
+
+.ycc-opacity, .ycc-hover-opacity:hover {
+  opacity: 0.60;
+}
+
+.ycc-opacity-off, .ycc-hover-opacity-off:hover {
+  opacity: 1.0;
+}
+
+.ycc-image {
+  max-width:100%;
+  height: auto;
+}
+
+.ycc-padding-large {
+  padding: 12px 24px!important;
+}
+
+.ycc-padding-16 {
+  padding-top: 16px!important;
+  padding-bottom: 16px!important;
+}
+
+.ycc-padding-24 {
+  padding-top: 24px!important;
+  padding-bottom: 24px!important;
+}
+
+.ycc-padding-32 {
+  padding-top: 32px!important;
+  padding-bottom: 32px!important;
+}
+
+.ycc-padding-64 {
+  padding-top: 64px!important;
+  padding-bottom: 64px!important;
+}
+
+.ycc-center {
+  text-align: center!important;
+}
+
+.ycc-content {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ycc-justify {
+  text-align: justify!important;
+}
+
+.ycc-wide {
+  letter-spacing: 4px;
+}
+
+.ycc-row:before, .ycc-row::after {
+  content: "";
+	display: table;
+  clear: both;
+}
+
+.ycc-row-padding {
+  padding: 0 8px;
+}
+
+.ycc-row-padding>.ycc-half {
+  padding: 0 8px;
+}
+
+.ycc-row-margin {
+  margin: 0 -16px;
+}
+
+.ycc-section {
+	margin-top: 16px!important;
+	margin-bottom: 16px!important
+}
+
+.ycc-margin-bottom {
+  margin-bottom: 16px!important;
+}
+
+.ycc-margin-right {
+  margin-right: 16px!important;
+}
+
+.ycc-ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0
+}
+
+.ycc-ul li {
+  border-bottom: 1px solid #ddd;
+}
+
+.ycc-left {
+	float: left!important
+}
+
+.ycc-circle {
+	border-radius: 50%
+}
+
+.ycc-quarter, .ycc-half {
+  float: left;
+	width: 100%
+}
+
+.ycc-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+}
+
+.ycc-index-bg {
+  background-image: url(../images/forestbridge.jpg);
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.ycc-animate-opacity {
+	animation: opac 0.8s
+}
+
+.ycc-animate-top {
+	position: relative;
+	animation: animatetop 0.4s
+}
+
+.ycc-display-topleft {
+	position: absolute;
+	left: 0;
+	top: 0
+}
+
+.ycc-display-middle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%)
+}
+
+.ycc-text-none {
+  text-decoration: none;
+  color: #fff;
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0
+	}
+
+	to {
+		top: 0;
+		opacity: 1
+	}
+}
+
+@media (max-width:600px) {
+  .ycc-hide-small {
+    display: none!important;
+  }
+  #main {
+    margin-left: 0;
+  }
+}
+
+@media (min-width:601px) and (max-width:992px) {
+  .ycc-hide-medium {
+    display: none!important;
+  }
+}
+
+@media (min-width:993px) {
+  .ycc-hide-large {
+    display: none!important;
+  }
+}
+
+@media (min-width:601px) {
+  .ycc-quarter {
+    width: 24.99999%;
+  }
+
+  .ycc-half {
+    width: 49.99999%;
+  }
 }

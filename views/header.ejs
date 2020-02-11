@@ -1,28 +1,217 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8"/>
-  <title>Blog</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Youth Can Code - 2020</title>
 </head>
-<body>
-  <header>
-    <h1><%= title %></h1>
+<body class="ycc-black">
+<nav class="ycc-sidebar ycc-sidebar-block ycc-hide-small ycc-small ycc-center">
+  <a href="#" class="ycc-bar-item ycc-padding-large ycc-hover-black">
+    <i class="fa fa-home ycc-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="ycc-bar-item ycc-padding-large ycc-hover-black">
+    <i class="fa fa-user ycc-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#photos" class="ycc-bar-item ycc-padding-large ycc-hover-black">
+    <i class="fa fa-eye ycc-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="ycc-bar-item ycc-padding-large ycc-hover-black">
+    <i class="fa fa-envelope ycc-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+<div class="ycc-topbar ycc-topbar-block ycc-hide-medium ycc-hide-large ycc-small ycc-opacity ycc-hover-opacity-off ycc-black ycc-center">
+  <a href="#" class="ycc-bar-item ycc-hover-light-grey-shadow">HOME</a>
+  <a href="#about" class="ycc-bar-item ycc-hover-light-grey-shadow">ABOUT</a>
+  <a href="#photos" class="ycc-bar-item ycc-hover-light-grey-shadow">PHOTOS</a>
+  <a href="#contact" class="ycc-bar-item ycc-hover-light-grey-shadow">CONTACT</a>
+</div>
+<!-- Page Content -->
+<div class="ycc-padding-large" id="main">
+  <!-- Header -->
+  <header class="ycc-padding-32 ycc-black ycc-center">
+    <!-- <h1 class="ycc-jumbo">I'm John Doe.</h1>
+    <p>Photographer and Web Designer.</p> -->
+    <img src="/images/jci_home_page_2.jpeg" alt="boy" class="ycc-image" width="992" height="1108">
   </header>
-  <nav>
-    <span><a title="HomePage" href="/">Home</a></span>
-    <% if(user) { %>
-      <span><a title="Post" href="/post">Post</a></span>
-      <span><a title="Logout" href="/logout">Logout</a></span>
-    <% } else { %>
-      <span><a title="Login" href="/login">Login</a></span>
-      <span><a title="Registeration" href="/reg">Register</a></span>
-    <% } %>
-  </nav>
-  <article>
-  <% if(success) { %>
-    <div><%= success %></div>
+  <!-- About -->
+  <div class="ycc-content ycc-justify ycc-padding-64 ycc-text-grey" id="about">
+    <h2 class="ycc-text-light-grey">Brief</h2>
+    <hr class="ycc-opacity" style="width:200px">
+    <p>By using innotech, to provide useful information to effectively manage resources and assets. This includes data collected from citizens and mechanical devices, that are processed and analyzed to monitor and manage traffic and transport systems, power plants, water supply networks, waste disposal, etc.
+    </p>
+    <h3 class="ycc-padding-16 ycc-text-light-grey">Programme</h3>
+    <p class="ycc-wide">Python</p>
+    <div class="ycc-white">
+      <div class="ycc-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="ycc-wide">Cloud Service</p>
+    <div class="ycc-white">
+      <div class="ycc-dark-grey" style="height:28px;width:55%"></div>
+    </div>
+    <p class="ycc-wide">Java</p>
+    <div class="ycc-white">
+      <div class="ycc-dark-grey" style="height:28px;width:45%"></div>
+    </div>
+    <p class="ycc-wide">C++</p>
+    <div class="ycc-white">
+      <div class="ycc-dark-grey" style="height:28px;width:35%"></div>
+    </div><br>
+
+    <div class="ycc-row ycc-padding-16 ycc-light-grey ycc-section ycc-center">
+      <div class="ycc-quarter ycc-section">
+        <span class="ycc-xlarge">$18000</span><br>
+        Total Prizes
+      </div>
+      <div class="ycc-quarter ycc-section">
+        <span class="ycc-xlarge">100+</span><br>
+        Participants
+      </div>
+      <div class="ycc-quarter ycc-section">
+        <span class="ycc-xlarge">25+</span><br>
+        Teams
+      </div>
+      <div class="ycc-quarter ycc-section">
+        <span class="ycc-xlarge">20+</span><br>
+        Sponsors
+      </div>
+    </div>
+
+    <button class="ycc-hover-light-grey-shadow ycc-light-grey ycc-padding-large ycc-section">
+      <i class="fa fa-download"></i> Download PowerPoint
+    </button>
+
+    <h3 class="ycc-padding-16 ycc-text-light-grey">Prize</h3>
+    <div class="ycc-row ycc-row-padding ycc-row-margin">
+      <div class="ycc-half ycc-margin-bottom">
+        <ul class="ycc-ul ycc-white ycc-center ycc-opacity ycc-hover-opacity-off">
+          <li class="ycc-dark-grey ycc-xlarge ycc-padding-32">First Prize</li>
+          <li class="ycc-padding-16">Great Idea</li>
+          <li class="ycc-padding-16">Full Programming</li>
+          <li class="ycc-padding-16">Great Presentation</li>
+          <li class="ycc-padding-16">
+            <h2>$ 10000</h2>
+            <span class="ycc-opacity">per month</span>
+          </li>
+          <li class="ycc-light-grey ycc-padding-24">
+            <button class="ycc-white ycc-padding-large ycc-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ycc-half">
+        <ul class="ycc-ul ycc-white ycc-center ycc-opacity ycc-hover-opacity-off">
+          <li class="ycc-dark-grey ycc-xlarge ycc-padding-32">Second Prize</li>
+          <li class="ycc-padding-16">Good Idea</li>
+          <li class="ycc-padding-16">Half Programming</li>
+          <li class="ycc-padding-16">Good Presentation</li>
+          <li class="ycc-padding-16">
+            <h2>$ 5000</h2>
+            <span class="ycc-opacity">per month</span>
+          </li>
+          <li class="ycc-light-grey ycc-padding-24">
+            <button class="ycc-white ycc-padding-large ycc-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="ycc-padding-24 ycc-text-light-grey">Contact</h3>
+    <img src="/images/man_1.jpg" alt="Avatar" class="ycc-left ycc-circle ycc-margin-right" style="width:80px">
+    <p><span class="ycc-large w3-margin-right">Wills Poon</span> Project Chairman</p>
+    <p>Main Contact</p><br>
+    
+    <img src="/images/man_2.jpg" alt="Avatar" class="ycc-left ycc-circle ycc-margin-right" style="width:80px">
+    <p><span class="ycc-large w3-margin-right">Thomas Luo</span> Organization Committe</p>
+    <p>Second Contact</p>
+  <!-- End About Section -->
+  </div>
+
+  <div class="ycc-padding-64 ycc-content" id="photos">
+    <h2 class="ycc-text-light-grey">Last Year Photos</h2>
+    <hr class="ycc-opacity" style="width:200px">
+
+    <!-- Grid for photos -->
+    <div class="ycc-row ycc-row-padding ycc-row-margin">
+      <div class="ycc-half">
+        <img src="/images/photo_1.jpg" style="width:100%">
+        <img src="/images/photo_2.jpg" style="width:100%">
+        <img src="/images/photo_3.jpg" style="width:100%">
+      </div>
+
+      <div class="ycc-half">
+        <img src="/images/photo_11.jpg" style="width:100%">
+        <img src="/images/photo_12.jpg" style="width:100%">
+        <img src="/images/photo_13.jpg" style="width:100%">
+        <img src="/images/photo_14.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="ycc-padding-64 ycc-content ycc-text-grey" id="contact">
+    <h2 class="ycc-text-light-grey">Contact Me</h2>
+    <hr class="ycc-opacity" style="width:200px">
+    
+    <div class="ycc-section">
+      <p><i class="fa fa-map-marker fa-fw ycc-text-white ycc-xxlarge ycc-margin-right"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw ycc-text-white ycc-xxlarge ycc-margin-right"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw ycc-text-white ycc-xxlarge ycc-margin-right"> </i> Email: mail@mail.com</p>
+    </div><br>
+    <p>Lets get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="ycc-input ycc-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="ycc-input ycc-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="ycc-input ycc-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="ycc-input ycc-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="ycc-padding-large ycc-light-grey ycc-hover-light-grey-shadow" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="ycc-content ycc-padding-64 ycc-text-grey ycc-xlarge">
+    <i class="fa fa-facebook-official ycc-hover-opacity"></i>
+    <i class="fa fa-instagram ycc-hover-opacity"></i>
+    <i class="fa fa-snapchat ycc-hover-opacity"></i>
+    <i class="fa fa-pinterest-p ycc-hover-opacity"></i>
+    <i class="fa fa-twitter ycc-hover-opacity"></i>
+    <i class="fa fa-linkedin ycc-hover-opacity"></i>
+    <p class="ycc-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="ycc-hover-text-green" style="color:inherit">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+</div>
+<header>
+  <h1><%= title %></h1>
+</header>
+<nav>
+  <span><a title="HomePage" href="/">Home</a></span>
+  <% if(user) { %>
+    <span><a title="Post" href="/post">Post</a></span>
+    <span><a title="Logout" href="/logout">Logout</a></span>
+  <% } else { %>
+    <span><a title="Login" href="/login">Login</a></span>
+    <span><a title="Registeration" href="/reg">Register</a></span>
   <% } %>
-  <% if(error) { %>
-    <div><%= error %></div>
-  <% } %>
+</nav>
+<article>
+<% if(success) { %>
+  <div><%= success %></div>
+<% } %>
+<% if(error) { %>
+  <div><%= error %></div>
+<% } %>
