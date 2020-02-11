@@ -275,7 +275,11 @@ button, input, select, textarea, optgroup {
   padding: 0 8px;
 }
 
-.ycc-row-padding>.ycc-half {
+.ycc-row-padding>.ycc-half, .ycc-row-padding>.ycc-third {
+  padding: 0 8px;
+}
+
+.ycc-row-padding>.ycc-half, .ycc-row-padding>.ycc-third, .ycc-row-padding>.ycc-third-half {
   padding: 0 8px;
 }
 
@@ -314,7 +318,7 @@ button, input, select, textarea, optgroup {
 	border-radius: 50%
 }
 
-.ycc-quarter, .ycc-half {
+.ycc-quarter, .ycc-half, .ycc-third, .ycc-third-half {
   float: left;
 	width: 100%
 }
@@ -431,6 +435,35 @@ button, input, select, textarea, optgroup {
   padding: 0 20px;
 }
 
+.col-sm-4 {
+  width: 50%;
+}
+
+.card {
+  min-height: 300px;
+  max-height: 500px;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.card-block {
+  font-size: 1em;
+  position: relative;
+  margin-top: 15px;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.ycc-sponser-image {
+  min-height: 180px;
+  max-height: 220px;
+}
+
 @keyframes animatetop {
 	from {
 		top: -300px;
@@ -447,8 +480,13 @@ button, input, select, textarea, optgroup {
   .ycc-hide-small {
     display: none!important;
   }
+
   #main {
     margin-left: 0;
+  }
+
+  .ycc-third-half {
+    width: 49.99999%;
   }
 }
 
@@ -471,6 +509,14 @@ button, input, select, textarea, optgroup {
 
   .ycc-half {
     width: 49.99999%;
+  }
+
+  .ycc-third {
+    width: 33.33333%;
+  }
+
+  .ycc-third-half {
+    width: 33.33333%;
   }
 
   .ycc-padding-32-16 {
