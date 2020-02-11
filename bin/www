@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+// 1 - 头上那个必须放第一行 - 表明是node可执行文件
+// 2 - 引入debug模块，打印调试日志
+var debug = require('debug')('blog');
+// 3 - 引入导出的上一层文件夹中的app实力例
+var app = require('../app');
+// 4 - 设置端口号
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
