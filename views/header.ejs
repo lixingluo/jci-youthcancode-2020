@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/stylesheets/style.css">
+<script type="text/javascript" src="/javascripts/register.js" defer=true></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 <title>Youth Can Code - 2020</title>
@@ -40,8 +41,9 @@
 <!-- Page Content -->
 <div class="ycc-padding-large" id="main">
   <!-- Header -->
-  <header class="ycc-padding-32-16 ycc-black ycc-center">
+  <header class="ycc-padding-32-16 ycc-black ycc-center ycc-relative">
     <img src="/images/jci_home_page_2.jpeg" alt="Opening Ceremony Image" class="ycc-image">
+    <button class="ycc-absolute-register-btn" onclick="document.getElementById('ticketModal').style.display='block'">Register Now</button>
   </header>
   <!-- About -->
   <div class="ycc-content ycc-justify ycc-padding-16 ycc-text-grey" id="about">
@@ -145,11 +147,80 @@
         </ul>
       </div>
     </div>
-
     <button class="ycc-hover-light-grey-shadow ycc-light-grey ycc-padding-large ycc-section">
       <i class="fa fa-download"></i> Download PowerPoint
     </button>
-
+    <div id="schedule" class="page-sections">
+      <h2 class="ycc-padding-32-16 ycc-text-light-grey">Hackathon Schedule</h2ycc-padding-16 ycc-text-light-grey>
+      <div class="row timetable ycc-text-grey">
+        <div class="col col-sm-12 col-md-4 day friday">
+          <div class="h3 text-uppercase">FEB 15, 2020 (Sat) - Opening</div>
+          <ol>
+            <li>
+              <p class="time">5:00 PM - 6:00 PM</p>
+              <p class="title">Registration, networking, drinks &amp; light dinner</p>
+            </li>
+            <li>
+              <p class="time">6:00 PM - 7:00 PM</p>
+              <p class="title">Day 1 welcome &amp; opening remarks</p>
+            </li>
+            <li>
+              <p class="time">7:00 PM - 7:30 PM</p>
+              <p class="title">Ice-breaking &amp; idea pitching</p>
+            </li>
+            <li>
+              <p class="time">7:30 PM - 8:15 PM</p>
+              <p class="title">Team formation session</p>
+            </li>
+            <li>
+              <p class="time">8:15 PM - 9:45 PM</p>
+              <p class="title">Technical Session by Microsoft</p>
+            </li>
+            <li>
+              <p class="time">9:45 PM</p>
+              <p class="title">Closing</p>
+            </li>
+          </ol>
+        </div>
+        <div class="col col-sm-12 col-md-4 day saturday">
+          <div class="h3 text-uppercase">MAR 14, 2020 (Sat) - Onine Workshop</div>
+          <ol>
+            <li>
+              <p class="time">8:30 AM - 9:00 AM</p>
+              <p class="title">Registration, networking, drinks &amp; snacks</p>
+            </li>
+            <li>
+              <p class="time">9:00 AM - 9:20 AM</p>
+              <p class="title">Day 2 opening remarks</p>
+            </li>
+            <li>
+              <p class="time">9:20 AM - 12:20 PM</p>
+              <p class="title">Building begins<br>Design-thinking workshop</p>
+            </li>
+            <li>
+              <p class="time">12:20 PM - 1:20 PM</p>
+              <p class="title">Lunch</p>
+            </li>
+            <li>
+              <p class="time">1:20 PM - 7:50 PM</p>
+              <p class="title">Building &amp; hacking<br>Pitching workshop</p>
+            </li>
+            <li>
+              <p class="time">7:50 PM - 8:50 PM</p>
+              <p class="title">Buffet Dinner</p>
+            </li>
+            <li>
+              <p class="time">7:50 PM - 10:00 PM</p>
+              <p class="title">Building &amp; hacking</p>
+            </li>
+            <li>
+              <p class="time">10:00 PM</p>
+              <p class="title">Closing</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
     <h2 class="ycc-padding-16 ycc-text-light-grey">Expert</h2>
     <div class="ycc-row ycc-row-padding ycc-row-margin">
       <div class="ycc-third-half ycc-margin-bottom">
@@ -261,6 +332,24 @@
     <i class="fab fa-linkedin ycc-hover-opacity"></i>
   <!-- End footer -->
   </footer>
+
+  <div id="ticketModal" class="ycc-modal" style="display: none;">
+    <div class="ycc-modal-content ycc-animate-top ycc-card-4">
+      <img src="/images/registeration-form-bg.png" class="ycc-register-bg">
+      <div class="ycc-padding-fat ycc-text-grey">
+        <p><label><i class="fa fa-envelope"></i> Email Address * </label></p>
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter notification email">
+        <p><label><i class="fa fa-school"></i> University * </label></p>
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter your university">
+        <p><label><i class="fa fa-user"></i> Name * </label></p>
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter your name">
+        <p><label><i class="fa fa-mobile"></i> Phone Number * </label></p>
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter notification phone">
+        <button class="ycc-block ycc-teal ycc-padding-8 ycc-section ycc-right">SUBMIT <i class="fa fa-check-circle"></i></button>
+        <button class="ycc-block ycc-teal ycc-padding-8 ycc-section" onclick="document.getElementById('ticketModal').style.display='none'">CANCEL <i class="fa fa-times-circle"></i></button>
+      </div>
+    </div>
+  </div>
 </div>
 <header>
   <h1><%= title %></h1>
