@@ -44,6 +44,14 @@
   <header class="ycc-padding-32-16 ycc-black ycc-center ycc-relative">
     <img src="/images/jci_home_page_2.jpeg" alt="Opening Ceremony Image" class="ycc-image">
     <button class="ycc-absolute-register-btn" onclick="document.getElementById('ticketModal').style.display='block'">Register Now</button>
+    <article>
+      <% if(success) { %>
+        <div><%= success %></div>
+      <% } %>
+      <% if(error) { %>
+        <div><%= error %></div>
+      <% } %>
+    </article>
   </header>
   <!-- About -->
   <div class="ycc-content ycc-justify ycc-padding-16 ycc-text-grey" id="about">
@@ -336,38 +344,42 @@
   <div id="ticketModal" class="ycc-modal" style="display: none;">
     <div class="ycc-modal-content ycc-animate-top ycc-card-4">
       <img src="/images/registeration-form-bg.png" class="ycc-register-bg">
-      <div class="ycc-padding-fat ycc-text-grey">
+      <form method="post" class="ycc-padding-fat ycc-text-grey">
         <p><label><i class="fa fa-envelope"></i> Email Address * </label></p>
-        <input class="ycc-input ycc-border" type="text" placeholder="Enter notification email">
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter notification email" name="email" required/>
+        <p><label><i class="fa fa-key"></i> Password * </label></p>
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter your password" name="password" required/>
+        <p><label><i class="fa fa-key"></i> Repeat Password * </label></p>
+        <input class="ycc-input ycc-border" type="text" placeholder="Re-enter your password" name="password-repeat" required/>
         <p><label><i class="fa fa-school"></i> University * </label></p>
-        <input class="ycc-input ycc-border" type="text" placeholder="Enter your university">
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter your university" name="university" required/>
         <p><label><i class="fa fa-user"></i> Name * </label></p>
-        <input class="ycc-input ycc-border" type="text" placeholder="Enter your name">
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter your name" name="name" required/>
         <p><label><i class="fa fa-mobile"></i> Phone Number * </label></p>
-        <input class="ycc-input ycc-border" type="text" placeholder="Enter notification phone">
-        <button class="ycc-block ycc-teal ycc-padding-8 ycc-section ycc-right">SUBMIT <i class="fa fa-check-circle"></i></button>
+        <input class="ycc-input ycc-border" type="text" placeholder="Enter notification phone" name="phone-number" required/>
+        <button class="ycc-block ycc-teal ycc-padding-8 ycc-section ycc-right" onclick="location.href='/'">SUBMIT <i class="fa fa-check-circle"></i></button>
         <button class="ycc-block ycc-teal ycc-padding-8 ycc-section" onclick="document.getElementById('ticketModal').style.display='none'">CANCEL <i class="fa fa-times-circle"></i></button>
-      </div>
+      </form>
     </div>
   </div>
 </div>
-<header>
-  <h1><%= title %></h1>
-</header>
-<nav>
-  <span><a title="HomePage" href="/">Home</a></span>
+<nav id="basic-btn">
   <% if(user) { %>
-    <span><a title="Post" href="/post">Post</a></span>
-    <span><a title="Logout" href="/logout">Logout</a></span>
+    <!-- <span><a href="/post">Post</a></span> -->
+    <div>
+      <!-- <button class="ycc-logout-btn" onclick="location.href='/logout'">Logout</button> -->
+    </div>
   <% } else { %>
-    <span><a title="Login" href="/login">Login</a></span>
-    <span><a title="Registeration" href="/reg">Register</a></span>
+    <div>
+      <!-- <button class="ycc-logout-btn" onclick="location.href='/login'">Login</button></span>
+      <button class="ycc-logout-btn" onclick="location.href='/reg'">Register</button></span> -->
+    </div>
   <% } %>
 </nav>
 <article>
-<% if(success) { %>
+<!-- <% if(success) { %>
   <div><%= success %></div>
 <% } %>
 <% if(error) { %>
   <div><%= error %></div>
-<% } %>
+<% } %> -->

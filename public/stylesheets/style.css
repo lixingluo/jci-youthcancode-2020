@@ -69,11 +69,11 @@ article a:hover {
 	bottom: 0
 }
 
-#main {
+#main, #basic-btn {
   margin-left: 120px;
 }
 
-#main {
+#main, #basic-btn {
   transition: margin-left .4s;
 }
 
@@ -491,6 +491,17 @@ button, input, select, textarea, optgroup {
   cursor: pointer;
 }
 
+.ycc-logout-btn {
+  bottom: 15%!important;
+  border: 1px solid transparent;
+  border-radius: 4px!important;
+  background-color: #FFF;
+  color: #ee196b;
+  font-weight: 700;
+  cursor: pointer;
+  right: 0px;
+}
+
 .ycc-relative {
   position: relative!important;
 }
@@ -569,7 +580,7 @@ button, input, select, textarea, optgroup {
     display: none!important;
   }
 
-  #main {
+  #main, #basic-btn {
     margin-left: 0;
   }
 

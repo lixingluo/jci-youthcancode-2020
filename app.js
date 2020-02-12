@@ -39,7 +39,8 @@ app.use(flash());
 app.use(session({
   secret: settings.cookieSecret,
   key: settings.db,
-  cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//30 days
+  // cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},
+  cookie: {maxAge: 1000 * 60 * 60 * 24 * 1},
   store: new MongoStore({
     // url: 'mongodb://localhost/blog'
     url: 'mongodb+srv://youthcancode:@jcidragon@jci-youthcancode-2020-gelro.mongodb.net/test?retryWrites=true&w=majority'

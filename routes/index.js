@@ -28,6 +28,47 @@ module.exports = function(app) {
       });
     });
   });
+  app.post('/', function(req, res) {
+    var email = req.body.email,
+        password = req.body.password,
+        password_re = req.body['password-repeat'],
+        university = req.body.university,
+        name = req.body.name,
+        phone_number = req.body['phone-number'];
+    if(password_re != password) {
+      req.flash('error', 'Error : The password did not match the re-typed password');
+      return res.redirect('/');
+    }
+    var newUser = new User({
+        email: email,
+        password: password,
+        university: university,
+        name: name,
+        phone_number: phone_number
+    });
+    User.get(newUser.email, function(err, user) {
+      if(err) {
+        req.flash('error', err);
+        return res.redirect('/');
+      }
+      if(user) {
+        req.flash('error', 'Error: The email already exist!');
+        return res.redirect('/r');
+      }
+      newUser.save(function(err, user) {
+        if(err) {
+          req.flash('error', err);
+          // 4 - 注册失败就返回主注册页
+          return res.redirect('/r');
+        }
+        // 5 - 用户信息存入session ? 
+        req.session.user = newUser;
+        req.flash('success', 'Congratulations Register Success!');
+        // 6 - 注册成功也返回注册主页
+        res.redirect('/');
+      });
+    });
+  });
   app.get('/reg', checkNotLogin);
   app.get('/reg', function(req, res) {
     res.render('reg', { 
@@ -75,52 +116,52 @@ module.exports = function(app) {
     req.flash('success', 'Logout Success');
     res.redirect('/');
   });
-  app.post('/reg', checkNotLogin);
-  app.post('/reg', function(req, res) {
-    var name = req.body.name,
-        password = req.body.password,
-        password_re = req.body['password-repeat'];
-    // 2 - 检验用户两次输入的密码是否一致
-    if(password_re != password) {
-      req.flash('error', '两次输入的密码不一致!');
-      // 3 - 返回注册页
-      return res.redirect('/reg');
-    }
-    var md5 = crypto.createHash('md5'),
-        password = md5.update(req.body.password).digest('hex');
-    var newUser = new User({
-        name: name,
-        password: password,
-        email: req.body.email
-    });
-    User.get(newUser.name, function(err, user) {
-      if(err) {
-        req.flash('error', err);
-        return res.redirect('/');
-      }
-      if(user) {
-        req.flash('error', 'User Already Exist!');
-        return res.redirect('/reg');
-      }
-      newUser.save(function(err, user) {
-        if(err) {
-          req.flash('error', err);
-          // 4 - 注册失败就返回主注册页
-          return res.redirect('/reg');
-        }
-        // 5 - 用户信息存入session ? 
-        req.session.user = newUser;
-        req.flash('success', 'Register Success');
-        // 6 - 注册成功也返回注册主页
-        res.redirect('/');
-      });
-    });
-  });
+  // app.post('/reg', checkNotLogin);
+  // app.post('/reg', function(req, res) {
+  //   var name = req.body.name,
+  //       password = req.body.password,
+  //       password_re = req.body['password-repeat'];
+  //   // 2 - 检验用户两次输入的密码是否一致
+  //   if(password_re != password) {
+  //     req.flash('error', '两次输入的密码不一致!');
+  //     // 3 - 返回注册页
+  //     return res.redirect('/reg');
+  //   }
+  //   var md5 = crypto.createHash('md5'),
+  //       password = md5.update(req.body.password).digest('hex');
+  //   var newUser = new User({
+  //       name: name,
+  //       password: password,
+  //       email: req.body.email
+  //   });
+  //   User.get(newUser.name, function(err, user) {
+  //     if(err) {
+  //       req.flash('error', err);
+  //       return res.redirect('/');
+  //     }
+  //     if(user) {
+  //       req.flash('error', 'User Already Exist!');
+  //       return res.redirect('/reg');
+  //     }
+  //     newUser.save(function(err, user) {
+  //       if(err) {
+  //         req.flash('error', err);
+  //         // 4 - 注册失败就返回主注册页
+  //         return res.redirect('/reg');
+  //       }
+  //       // 5 - 用户信息存入session ? 
+  //       req.session.user = newUser;
+  //       req.flash('success', 'Register Success');
+  //       // 6 - 注册成功也返回注册主页
+  //       res.redirect('/');
+  //     });
+  //   });
+  // });
   app.post('/login', checkNotLogin);
   app.post('/login', function(req, res) {
     var md5 = crypto.createHash('md5'),
         password = md5.update(req.body.password).digest('hex');
-    User.get(req.body.name, function(err, user) {
+    User.get(req.body.email, function(err, user) {
       if(!user) {
         req.flash('error', 'User Not Exist!');
         return res.redirect('/login');

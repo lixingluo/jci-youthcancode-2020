@@ -4,9 +4,11 @@ var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb+srv://youthcancode:@jcidragon@jci-youthcancode-2020-gelro.mongodb.net/test?retryWrites=true&w=majority'
 
 function User(user) {
-  this.name = user.name;
-  this.password = user.password;
   this.email = user.email;
+  this.password = user.password;
+  this.university = user.university;
+  this.name = user.name;
+  this.phone_number = user.phone_number;
 };
 
 module.exports = User;
@@ -15,9 +17,11 @@ module.exports = User;
 User.prototype.save = function(callback) {
   // 2 - 要存入数据库的用户文档
   var user = {
-    name: this.name,
+    email: this.email,
     password: this.password,
-    email: this.email
+    university: this.university,
+    name: this.name,
+    phone_number: this.phone_number
   };
   // 3 - 打开数据库
   MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
@@ -48,7 +52,7 @@ User.prototype.save = function(callback) {
 };
 
 // 1 - 读取用户信息
-User.get = function(name, callback) {
+User.get = function(email, callback) {
   MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
     if(err) {
       // 2 - 错误, 返回err信息
@@ -60,7 +64,7 @@ User.get = function(name, callback) {
     // 3 - 读取users集合
     // 4 - 查找用户名(name键)值为name的一个文档
     dbo.collection('users').findOne({
-      name: name
+      email: email
     }, function(err, user) {
       db.close();
       if(err) {
